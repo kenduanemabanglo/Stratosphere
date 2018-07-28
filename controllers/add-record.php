@@ -21,12 +21,46 @@
         $middle_initial = $middle_name[0];
         $name = $last_name . ", " . $first_name . " " . $middle_initial . ".";
 
-        $add = "INSERT INTO records(policy_no, last_name, first_name, name, role, product, effective_date, due_date, amount, contact_no, email, mode, status, servicing_agent, servicing_agent_username) VALUES ('$policy_no','$last_name', '$first_name', '$name', '$role', '$product', '$effective_date', '$due_date', '$amount', '$contact_no', '$email', '$mode', '$status', '$servicing_agent', '$servicing_agent_username')";  
-        $exec_add = $db->query($add);
+        $add = mysqli_query($db, "INSERT INTO
+        records(
+          policy_no,
+          last_name,
+          first_name,
+          name,
+          role,
+          product,
+          effective_date,
+          due_date,
+          amount,
+          contact_no,
+          email,
+          mode,
+          status,
+          servicing_agent,
+          servicing_agent_username
+        )
+      VALUES
+        (
+          '$policy_no',
+          '$last_name',
+          '$first_name',
+          '$name',
+          '$role',
+          '$product',
+          '$effective_date',
+          '$due_date',
+          '$amount',
+          '$contact_no',
+          '$email',
+          '$mode',
+          '$status',
+          '$servicing_agent',
+          '$servicing_agent_username'
+        )");  
     }
-    if($exec_add) {
+    if($add) {
             echo 'Congratulations! You have successfully added a new record.';
         }else{
             echo 'Oops! Something went wrong. Please try again.';
-        }
+    }
 ?>

@@ -153,14 +153,14 @@
             </div>
             <div class="two-column">
                 <label>Effective Date</label>
-                <input type="text" name="effective_date" data-large-default="true" data-large-mode="true" data-modal="true" data-theme="manulife"/>
+                <input type="text" name="effective_date" data-large-default="true" data-large-mode="true" data-format="Y-m-d" data-modal="true" data-theme="manulife"/>
                 <script>
                     $("input[name='effective_date']").dateDropper();
                 </script>
             </div>
             <div class="two-column">
                 <label>Due Date</label>
-                <input type="text" name="due_date" data-large-default="true" data-large-mode="true" data-modal="true" data-theme="manulife"/>
+                <input type="text" name="due_date" data-large-default="true" data-large-mode="true" data-format="Y-m-d" data-modal="true" data-theme="manulife"/>
                 <script>
                     $("input[name='due_date']").dateDropper();
                 </script>
