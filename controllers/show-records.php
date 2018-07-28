@@ -1,7 +1,7 @@
 <?php include 'database.php';
     // Show all the records with reference to the logged in agent
     $reference = implode('', $_SESSION);
-    $records = mysqli_query($db, "SELECT * FROM records WHERE servicing_agent_username = '$reference'");
+    $records = mysqli_query($db, "SELECT * FROM records WHERE servicing_agent_username = '$reference' ORDER BY last_name ASC");
     if ($records->num_rows > 0) {
         while($show_records = mysqli_fetch_assoc($records)) {
             $policy_no = $show_records['policy_no'];

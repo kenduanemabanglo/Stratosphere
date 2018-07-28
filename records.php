@@ -86,7 +86,7 @@
 
     <!-- Modals -->
     <div id="add">
-    <form action="" method="POST" class="submission-form">
+    <form action="controllers/add-record.php" method="POST" class="submission-form">
 		<div class="add-content">
 			<div class="header">
                 <h2>Add a Record</h2>
@@ -105,31 +105,31 @@
             
             <div class="two-column">
                 <label>Policy No.</label>
-                    <input type="text">
+                    <input type="text" name="policy_no">
             </div>
             <div class="two-column">
                 <label>First Name</label>
-                    <input type="text">
+                    <input type="text" name="first_name">
             </div>
             <div class="two-column">
                 <label>Middle Name/M.I.</label>
-                    <input type="text">
+                    <input type="text" name="middle_name">
             </div>
             <div class="two-column">
                 <label>Last Name</label>
-                    <input type="text">
+                    <input type="text" name="last_name">
             </div>
             <div class="two-column">
                 <label>Contact No.</label>
-                    <input type="text">
+                    <input type="text" name="contact_no">
             </div>
             <div class="two-column">
                 <label>Email</label>
-                    <input type="text">
+                    <input type="text" name="email">
             </div>
             <div class="two-column">
                 <label>Role</label>
-                   <select name="">
+                   <select name="role">
                        <option default>Please choose role</option>
                        <option value="Insured">Insured</option>
                        <option value="Owner">Owner</option>
@@ -141,26 +141,33 @@
                 <label>Product</label>
                    <select name="product">
                        <option default>Please choose product</option>
-                       <?php include 'controllers/product.php';?>
+                       <?php    
+                            $product = mysqli_query($db, "SELECT * FROM product;");
+                            if ($product->num_rows > 0) {
+                            while($show_product = mysqli_fetch_assoc($product)) {
+                            echo '<option value="'.$show_product['product_name'].'">'.$show_product['product_name'].'</option>';
+                            }
+                        }
+                        ?>
                    </select>
             </div>
             <div class="two-column">
                 <label>Effective Date</label>
-                <input type="text" name="eDate" data-large-default="true" data-large-mode="true" data-modal="true" data-theme="manulife"/>
+                <input type="text" name="effective_date" data-large-default="true" data-large-mode="true" data-modal="true" data-theme="manulife"/>
                 <script>
-                    $("input[name='eDate']").dateDropper();
+                    $("input[name='effective_date']").dateDropper();
                 </script>
             </div>
             <div class="two-column">
                 <label>Due Date</label>
-                <input type="text" name="dDate" data-large-default="true" data-large-mode="true" data-modal="true" data-theme="manulife"/>
+                <input type="text" name="due_date" data-large-default="true" data-large-mode="true" data-modal="true" data-theme="manulife"/>
                 <script>
-                    $("input[name='dDate']").dateDropper();
+                    $("input[name='due_date']").dateDropper();
                 </script>
             </div>
             <div class="two-column">
                 <label>Status</label>
-                   <select name="">
+                   <select name="status">
                        <option default>Please choose status</option>
                        <option value="Premium Paying">Premium Paying</option>
                        <option value="Fully Paid">Fully Paid</option>
@@ -175,7 +182,7 @@
             </div>
             <div class="two-column">
                 <label>Mode</label>
-                   <select name="">
+                   <select name="mode">
                        <option default>Please choose mode</option>
                        <option value="Annually">Annually</option>
                        <option value="Semi-annually">Semi-annually</option>
@@ -185,7 +192,7 @@
             </div>
             <div class="two-column">
                 <label>Amount</label>
-                    <input type="text">
+                    <input type="text" name="amount">
             </div>
             <div class="two-column">
                 <label>Servicing Agent</label>
@@ -195,7 +202,7 @@
                 if($servicing_name->num_rows != 0) {
                     while($show_agent_name = mysqli_fetch_assoc($servicing_name)){
                         $servicing_agent_name = $show_agent_name['servicing_name'];
-                        echo '<input type="text" value="'.$servicing_agent_name.'">';
+                        echo '<input type="text" value="'.$servicing_agent_name.'" name="servicing_agent">';
                     }
                 }
             ?>  
