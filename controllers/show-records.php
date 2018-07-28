@@ -24,7 +24,6 @@
                     echo '<p>Effective Date : '.$effective_date;'</p>'; 
                     echo '<p>Status : '.$status;'</p>'; 
                     echo '</div>';
-                        
                 echo '</div>';
             echo '</div>';
         } 

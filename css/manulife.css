@@ -1,0 +1,68 @@
+/*
+
+	INSTRUCTIONS ---------------------------------------------------------------------------------
+  
+  1. link this stylesheet in the head of your HTML
+  	 <link href="YOUR PATH/manulife.css" rel="stylesheet" type="text/css" />
+     
+  2. Set the file name as data-theme attribute on your input
+  	 <input data-theme="manulife" />
+     
+  3. That's it!
+  
+  When you run script the style will be automatically applied.
+
+*/
+div.datedropper.manulife {
+  border-radius: 8px;
+  width: 200px;
+}
+div.datedropper.manulife .picker {
+  border-radius: 8px;
+  box-shadow: 0 0 32px 0px rgba(0, 0, 0, 0.1);
+}
+div.datedropper.manulife .pick-l {
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+div.datedropper.manulife:before,
+div.datedropper.manulife .pick-submit,
+div.datedropper.manulife .pick-lg-b .pick-sl:before,
+div.datedropper.manulife .pick-m,
+div.datedropper.manulife .pick-lg-h {
+  background-color: #77dd77;
+}
+div.datedropper.manulife .pick-y.pick-jump,
+div.datedropper.manulife .pick li span,
+div.datedropper.manulife .pick-lg-b .pick-wke,
+div.datedropper.manulife .pick-btn {
+  color: #77dd77;
+}
+div.datedropper.manulife .picker,
+div.datedropper.manulife .pick-l {
+  background-color: #FFF;
+}
+div.datedropper.manulife .picker,
+div.datedropper.manulife .pick-arw,
+div.datedropper.manulife .pick-l {
+  color: #4D4D4D;
+}
+div.datedropper.manulife .pick-m,
+div.datedropper.manulife .pick-m .pick-arw,
+div.datedropper.manulife .pick-lg-h,
+div.datedropper.manulife .pick-lg-b .pick-sl,
+div.datedropper.manulife .pick-submit {
+  color: #FFF;
+}
+div.datedropper.manulife.picker-tiny:before,
+div.datedropper.manulife.picker-tiny .pick-m {
+  background-color: #FFF;
+}
+div.datedropper.manulife.picker-tiny .pick-m,
+div.datedropper.manulife.picker-tiny .pick-m .pick-arw {
+  color: #4D4D4D;
+}
+div.datedropper.manulife.picker-lkd .pick-submit {
+  background-color: #FFF;
+  color: #4D4D4D;
+}

@@ -36,7 +36,68 @@ p {
     clear: both;
 }
 
-#modal {
+#add {
+	left:50%;
+	margin:-250px 0 0 -40%;
+	opacity: 0;
+	position:absolute;
+	top:-50%;
+	visibility: hidden;
+	width:80%;
+	box-shadow:0 3px 7px rgba(0,0,0,.25);
+	box-sizing:border-box;
+	transition: all 0.4s ease-in-out;
+	-moz-transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.4s ease-in-out;
+}
+	/* Make the add appear when targeted */
+	#add:target {
+		opacity: 1;
+		top:50%;
+		visibility: visible;
+	}
+#add .header,#add  {
+	border-bottom: 1px solid #e7e7e7;
+	border-radius: 5px 5px 0 0;
+}
+	#add .cf-footer {
+		border:none;
+		border-top: 1px solid #e7e7e7;
+        border-radius: 0 0 5px 5px;
+        height: 50px;
+	}
+#add h2 {
+	margin:0;
+}
+#add .btn {
+	float:right;
+}
+#add .copy,#add .header, #add .footer {
+	padding:15px;
+}
+.add-content {
+	background: #77dd77;
+	position: relative;
+	z-index: 20;
+    border-radius:5px;
+    color: #fff;
+}
+#add .copy {
+	background: #fff;
+}
+
+#add .overlay {
+	background-color: #000;
+	background: rgba(0,0,0,0.8);
+	height: 100%;
+	left: 0;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 10;
+}
+
+#edit {
 	left:50%;
 	margin:-250px 0 0 -40%;
 	opacity: 0;
@@ -50,42 +111,102 @@ p {
 	-moz-transition: all 0.4s ease-in-out;
 	-webkit-transition: all 0.4s ease-in-out;
 }
-	/* Make the modal appear when targeted */
-	#modal:target {
+	/* Make the edit appear when targeted */
+	#edit:target {
 		opacity: 1;
 		top:50%;
 		visibility: visible;
 	}
-#modal .header,#modal  {
+#edit .header,#edit  {
 	border-bottom: 1px solid #e7e7e7;
 	border-radius: 5px 5px 0 0;
 }
-	#modal .cf-footer {
+	#edit .cf-footer {
 		border:none;
 		border-top: 1px solid #e7e7e7;
         border-radius: 0 0 5px 5px;
         height: 50px;
 	}
-#modal h2 {
+#edit h2 {
 	margin:0;
 }
-#modal .btn {
+#edit .btn {
 	float:right;
 }
-#modal .copy,#modal .header, #modal .footer {
+#edit .copy,#edit .header, #edit .footer {
 	padding:15px;
 }
-.modal-content {
+.edit-content {
 	background: #f7f7f7;
 	position: relative;
 	z-index: 20;
 	border-radius:5px;
 }
-#modal .copy {
+#edit .copy {
 	background: #fff;
 }
 
-#modal .overlay {
+#edit .overlay {
+	background-color: #000;
+	background: rgba(0,0,0,0.8);
+	height: 100%;
+	left: 0;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 10;
+}
+
+#delete {
+	left:50%;
+	margin:-250px 0 0 -40%;
+	opacity: 0;
+	position:absolute;
+	top:-50%;
+	visibility: hidden;
+	width:80%;
+	box-shadow:0 3px 7px rgba(0,0,0,.25);
+	box-sizing:border-box;
+	transition: all 0.4s ease-in-out;
+	-moz-transition: all 0.4s ease-in-out;
+	-webkit-transition: all 0.4s ease-in-out;
+}
+	/* Make the delete appear when targeted */
+	#delete:target {
+		opacity: 1;
+		top:50%;
+		visibility: visible;
+	}
+#delete .header,#delete  {
+	border-bottom: 1px solid #e7e7e7;
+	border-radius: 5px 5px 0 0;
+}
+	#delete .cf-footer {
+		border:none;
+		border-top: 1px solid #e7e7e7;
+        border-radius: 0 0 5px 5px;
+        height: 50px;
+	}
+#delete h2 {
+	margin:0;
+}
+#delete .btn {
+	float:right;
+}
+#delete .copy,#delete .header, #delete .footer {
+	padding:15px;
+}
+.delete-content {
+	background: #f7f7f7;
+	position: relative;
+	z-index: 20;
+	border-radius:5px;
+}
+#delete .copy {
+	background: #fff;
+}
+
+#delete .overlay {
 	background-color: #000;
 	background: rgba(0,0,0,0.8);
 	height: 100%;
@@ -106,17 +227,107 @@ p {
     font-weight: 300;
 }
 
-.close {
-    padding: 7px 5px;
-    background: #ccc;
-    text-decoration: none;
-    color: black;
-    border: 1px solid #bbb;
-    border-radius: 8px;
-    font-weight: 300;
-    margin-top: 4px;
-    margin-right: 4px;
+.submission-form {
+	margin-top: 10px !important;
+}
 
+  .submission-form label {
+    display: block;
+    padding: 1rem 0 .25rem;
+    text-transform: uppercase;
+    font-size: 14px;
+    color: black;
+    font-weight: 300;
+  }
+  .submission-form input{
+    display: block;
+    width: 100%;
+    border: 2px solid #2980B9;
+    padding: .5rem;
+    font-size: 18px;
+    border-radius: 5px;
+    font-family: 'Poppins';
+  }
+
+  .submission-form select {
+    display: block;
+    width: 100%;
+    border: 2px solid #2980B9;
+    padding: .5rem;
+    font-size: 18px !important;
+    border-radius: 5px;
+    font-family: 'Poppins';
+  }
+
+  .submission-form option {
+    display: block;
+    width: 100%;
+    border: 2px solid #2980B9;
+    padding: .5rem;
+    font-size: 15px !important;
+    border-radius: 5px;
+    font-family: 'Poppins';
+  }
+  /* Create two equal columns that floats next to each other */
+.two-column {
+    float: left;
+    width: 50%;
+	padding: 10px;
+}
+
+/* Clear floats after the columns */
+.two-row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.three-column {
+    float: left;
+    width: 33.33%;
+}
+
+/* Clear floats after the columns */
+.three-row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.close {
+    padding: 11px 10px !important;
+    background: #f7676c !important;
+    text-decoration: none !important;
+    border: 2px solid #f7675c !important;
+    border-radius: 8px !important;
+    font-weight: 300 !important;
+    margin-top: 4px !important;
+    margin-right: 4px !important;
+    color: #fff !important;
+}
+
+.add {
+    padding: 11px 10px !important;
+    background: #1e88e5 !important;
+    text-decoration: none !important;
+    border: 0px solid #fff;
+    border-radius: 8px !important;
+    font-weight: 300 !important;
+    margin-top: 4px !important;
+    margin-right: 4px !important;
+    color: #fff !important;
+}
+
+.reset {
+    padding: 11px 10px !important;
+    background: #ff965f !important;
+    text-decoration: none !important;
+    border: 2px solid #ff964f !important;
+    border-radius: 8px !important;
+    font-weight: 300 !important;
+    margin-top: 4px !important;
+    margin-right: 4px !important;
+    color: #fff !important;
 }
 
 @media screen and (max-width: 600px) {
