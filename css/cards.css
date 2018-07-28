@@ -1,0 +1,130 @@
+.card-pp {
+    box-shadow: 2px 4px 8px 2px rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 5px; 
+    width: 300px;
+    background: #fff;
+    /* #81d4fa; */
+}
+
+.card-pp:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.column {
+    float: left;
+    width: 15%;
+    margin-left: 108px;
+}
+
+h4 {
+    margin-left: 5px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 100 !important;
+}
+
+p {
+    margin-left: 5px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400 !important;
+}
+
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+#modal {
+	left:50%;
+	margin:-250px 0 0 -40%;
+	opacity: 0;
+	position:absolute;
+	top:-50%;
+	visibility: hidden;
+	width:80%;
+	box-shadow:0 3px 7px rgba(0,0,0,.25);
+	box-sizing:border-box;
+	transition: all 0.4s ease-in-out;
+	-moz-transition: all 0.4s ease-in-out;
+	-webkit-transition: all 0.4s ease-in-out;
+}
+	/* Make the modal appear when targeted */
+	#modal:target {
+		opacity: 1;
+		top:50%;
+		visibility: visible;
+	}
+#modal .header,#modal  {
+	border-bottom: 1px solid #e7e7e7;
+	border-radius: 5px 5px 0 0;
+}
+	#modal .cf-footer {
+		border:none;
+		border-top: 1px solid #e7e7e7;
+        border-radius: 0 0 5px 5px;
+        height: 50px;
+	}
+#modal h2 {
+	margin:0;
+}
+#modal .btn {
+	float:right;
+}
+#modal .copy,#modal .header, #modal .footer {
+	padding:15px;
+}
+.modal-content {
+	background: #f7f7f7;
+	position: relative;
+	z-index: 20;
+	border-radius:5px;
+}
+#modal .copy {
+	background: #fff;
+}
+
+#modal .overlay {
+	background-color: #000;
+	background: rgba(0,0,0,0.8);
+	height: 100%;
+	left: 0;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 10;
+}
+
+.show-more {
+    padding: 7px 5px;
+    background: #1e88e5;
+    text-decoration: none;
+    color: white;
+    border: 0px solid #fff;
+    border-radius: 8px;
+    font-weight: 300;
+}
+
+.close {
+    padding: 7px 5px;
+    background: #ccc;
+    text-decoration: none;
+    color: black;
+    border: 1px solid #bbb;
+    border-radius: 8px;
+    font-weight: 300;
+    margin-top: 4px;
+    margin-right: 4px;
+
+}
+
+@media screen and (max-width: 600px) {
+    .column {
+        width: 100%;
+    }
+
+    .search-bar {
+        width: 100px !important;
+    }
+}
