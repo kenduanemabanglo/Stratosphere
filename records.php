@@ -1,5 +1,9 @@
 <?php include 'database.php';
     session_start();
+    if (!isset($_SESSION['start_session']) || (trim ($_SESSION['start_session']) == '')) {
+        header('location:index.php');
+        exit();
+    }
 ?>
 <!DOCTYPE html>
 <html>
@@ -213,8 +217,8 @@
 			<div class="cf footer">
                 <input type="submit" class="add" name="add" value="Add"/>
             </form>
-                <input type="reset" class="reset" name="reset" value="Reset"/>
-                <input type="button" class="close" name="cancel" value="Cancel" onclick="location.href='#';"/>
+                <input type="reset" class="reset" value="Reset"/>
+                <input type="button" class="close" value="Cancel" onclick="location.href='#';"/>
 
 			</div>
 		</div>

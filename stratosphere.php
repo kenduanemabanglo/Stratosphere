@@ -7,6 +7,11 @@
             $first_name = $name['first_name'];
         }
     }
+ 
+ if (!isset($_SESSION['start_session']) || (trim ($_SESSION['start_session']) == '')) {
+   header('location:index.php');
+   exit();
+}
 ?>
 <!DOCTYPE html>
 <html>

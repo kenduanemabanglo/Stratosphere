@@ -1,5 +1,5 @@
 <?php include 'database.php';
-  session_start();
+session_start();
     if(isset($_POST['add'])) {
         $policy_no = $_POST['policy_no'];
         $first_name = $_POST['first_name'];
@@ -56,12 +56,12 @@
           '$status',
           '$servicing_agent',
           '$servicing_agent_username'
-        );";
+        )";  
         $exec_add = mysqli_query($db, $add);
     }
-    if($exec_add){
-      echo 'Congratulations! You have successfully added a new record. Jus keep adding!';
-    }else{
-      echo 'Oops! Something went wrong. Try again.';
-    }    
+    if($exec_add) {
+            echo 'Congratulations! You have successfully added a new record.';
+        }else{
+            echo 'Oops! Something went wrong. Please try again.';
+    }
 ?>
