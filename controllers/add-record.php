@@ -1,5 +1,4 @@
-<?php include 'database.php';
-session_start();
+<?php include 'database.php';;
     if(isset($_POST['add'])) {
         $policy_no = $_POST['policy_no'];
         $first_name = $_POST['first_name'];
@@ -21,7 +20,7 @@ session_start();
         $middle_initial = $middle_name[0];
         $name = $last_name . ", " . $first_name . " " . $middle_initial . ".";
 
-        $add = "INSERT INTO
+        $add = mysqli_query($db, "INSERT INTO
         `records`(
           `policy_no`,
           `last_name`,
@@ -56,12 +55,19 @@ session_start();
           '$status',
           '$servicing_agent',
           '$servicing_agent_username'
-        )";  
-        $exec_add = mysqli_query($db, $add);
+        )"); 
+        
+        if($add) {
+          echo '<script type="text/javascript">';
+            echo 'alert("Congratulations! You have successfully added a new record. Just keep adding!")';
+            header('location: ../records.php');
+          echo '</script>';
+      }else{
+        echo '<script type="text/javascript">';
+            echo 'alert("Oops! Something went wrong. Please try again.")';
+          echo '</script>';
+          
+  }
     }
-    if($exec_add) {
-            echo 'Congratulations! You have successfully added a new record.';
-        }else{
-            echo 'Oops! Something went wrong. Please try again.';
-    }
+    
 ?>

@@ -20,13 +20,15 @@
 h4 {
     margin-left: 5px;
     font-family: 'Poppins', sans-serif;
-    font-weight: 100 !important;
+	font-weight: 100 !important;
+	color: #000 !important;
 }
 
 p {
     margin-left: 5px;
     font-family: 'Poppins', sans-serif;
-    font-weight: 400 !important;
+	font-weight: 400 !important;
+	color: 000 !important;
 }
 
 
@@ -41,7 +43,7 @@ p {
 	margin:-250px 0 0 -40%;
 	opacity: 0;
 	position:absolute;
-	top:-50%;
+	top:0%;
 	visibility: hidden;
 	width:80%;
 	box-shadow:0 3px 7px rgba(0,0,0,.25);
@@ -242,7 +244,7 @@ p {
   .submission-form input{
     display: block;
     width: 100%;
-    border: 2px solid #2980B9;
+    border: 2px solid #77dd77;
     padding: .5rem;
     font-size: 18px;
     border-radius: 5px;
@@ -252,7 +254,7 @@ p {
   .submission-form select {
     display: block;
     width: 100%;
-    border: 2px solid #2980B9;
+    border: 2px solid #77dd77;
     padding: .5rem;
     font-size: 18px !important;
     border-radius: 5px;
@@ -294,41 +296,53 @@ p {
     clear: both;
 }
 
-.close {
+input[value="Cancel"] {
     padding: 11px 10px !important;
-    background: #f7676c !important;
-    text-decoration: none !important;
-    border: 2px solid #f7675c !important;
-    border-radius: 8px !important;
-    font-weight: 300 !important;
-    margin-top: 4px !important;
-    margin-right: 4px !important;
-    color: #fff !important;
-}
-
-.add {
-    padding: 11px 10px !important;
-    background: #1e88e5 !important;
+    background-color: #e74c3c !important;
+  box-shadow: 0px 5px 0px 0px #CE3323 !important;
     text-decoration: none !important;
     border: 0px solid #fff;
     border-radius: 8px !important;
     font-weight: 300 !important;
-    margin-top: 4px !important;
+    margin-top: 12px !important;
     margin-right: 4px !important;
     color: #fff !important;
 }
+.close:hover {
+	background-color: #FF6656 !important;
+}
 
-.reset {
+input[name="add"] {
     padding: 11px 10px !important;
-    background: #ff965f !important;
-    text-decoration: none !important;
-    border: 2px solid #ff964f !important;
+    background: #55acee !important;
+	text-decoration: none !important;
+	box-shadow: 0px 5px 0px 0px #3C93D5 !important;
+    border: 0px solid #fff;
     border-radius: 8px !important;
     font-weight: 300 !important;
     margin-top: 4px !important;
+	margin-right: 4px !important;
+	color: #fff !important;
+		/* background-color: #55acee; */
+}
+.add:hover {
+		background-color: #6FC6FF !important;
+	  }
+
+input[value="Reset"] {
+    padding: 11px 10px !important;
+    background-color: #e67e22 !important;
+  box-shadow: 0px 5px 0px 0px #CD6509 !important;
+  border: 0px solid #fff;
+    border-radius: 8px !important;
+    font-weight: 300 !important;
+    margin-top: 10px !important;
     margin-right: 4px !important;
     color: #fff !important;
 }
+.reset:hover {
+	background-color: #FF983C !important;
+  }
 
 @media screen and (max-width: 600px) {
     .column {
@@ -337,5 +351,5 @@ p {
 
     .search-bar {
         width: 100px !important;
-    }
+	}
 }

@@ -28,7 +28,7 @@
             <label for="nav" class="nav-btn">
                 <i></i>
                 <i></i>
-                <i></i>
+                <i></i>                  
             </label>
             <div class="logo">
                 <a href="stratosphere.php">STRATOSPHERE</a>
@@ -90,7 +90,8 @@
 
     <!-- Modals -->
     <div id="add">
-    <form action="controllers/add-record.php" method="POST" class="submission-form">
+    <?php include 'controllers/add-record.php'; ?>
+    <form method="POST" class="submission-form">
 		<div class="add-content">
 			<div class="header">
                 <h2>Add a Record</h2>
@@ -215,7 +216,7 @@
             
 			</div>
 			<div class="cf footer">
-                <input type="submit" class="add" name="add" value="Add"/>
+                <input type="submit" class="add" name="add" value="Add" onclick="location.href='records.php";/>
             </form>
                 <input type="reset" class="reset" value="Reset"/>
                 <input type="button" class="close" value="Cancel" onclick="location.href='#';"/>
