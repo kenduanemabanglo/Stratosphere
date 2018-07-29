@@ -61,7 +61,7 @@
                 <div class="action red"><a href="#delete"><i class="fa fa-trash"></i></a>
                 <div class="tooltip">Delete a Record</div>
                 </div>
-                <div class="action orange"><a href="print.php"><i class="fa fa-print"></i></a>
+                <div class="action orange"><a href="print-to-pdf.php"><i class="fa fa-print"></i></a>
                 <div class="tooltip">Print</div>
                 </div>
                 </center>
