@@ -30,13 +30,13 @@ div.datedropper.manulife .pick-submit,
 div.datedropper.manulife .pick-lg-b .pick-sl:before,
 div.datedropper.manulife .pick-m,
 div.datedropper.manulife .pick-lg-h {
-  background-color: #77dd77;
+  background-color: #006F3C;
 }
 div.datedropper.manulife .pick-y.pick-jump,
 div.datedropper.manulife .pick li span,
 div.datedropper.manulife .pick-lg-b .pick-wke,
 div.datedropper.manulife .pick-btn {
-  color: #77dd77;
+  color: #006F3C;
 }
 div.datedropper.manulife .picker,
 div.datedropper.manulife .pick-l {
@@ -45,7 +45,7 @@ div.datedropper.manulife .pick-l {
 div.datedropper.manulife .picker,
 div.datedropper.manulife .pick-arw,
 div.datedropper.manulife .pick-l {
-  color: #4D4D4D;
+  color: #000;
 }
 div.datedropper.manulife .pick-m,
 div.datedropper.manulife .pick-m .pick-arw,
@@ -60,9 +60,9 @@ div.datedropper.manulife.picker-tiny .pick-m {
 }
 div.datedropper.manulife.picker-tiny .pick-m,
 div.datedropper.manulife.picker-tiny .pick-m .pick-arw {
-  color: #4D4D4D;
+  color: #000;
 }
 div.datedropper.manulife.picker-lkd .pick-submit {
   background-color: #FFF;
-  color: #4D4D4D;
+  color: #000;
 }

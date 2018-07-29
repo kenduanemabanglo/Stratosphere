@@ -200,7 +200,7 @@
                 <input type="submit" class="add" name="add" value="Add" onclick="location.href='records.php";/>
             </form>
                 <input type="reset" class="reset" value="Reset"/>
-                <input type="button" class="close" value="Cancel" onclick="location.href='#';"/>
+                <input type="button" class="close" value="Cancel" onclick="location.href='records.php';"/>
 
 			</div>
 		</div>

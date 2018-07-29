@@ -216,7 +216,7 @@
             
 			</div>
 			<div class="cf footer">
-                <input type="submit" class="add" name="add" value="Add" onclick="location.href='records.php";/>
+                <input type="submit" class="add" name="add" value="Add";/>
             </form>
                 <input type="reset" class="reset" value="Reset"/>
                 <input type="button" class="close" value="Cancel" onclick="location.href='#';"/>
