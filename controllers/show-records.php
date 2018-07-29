@@ -12,8 +12,6 @@
             $effective_date = date('F d, Y', strtotime($show_records['effective_date']));
             $status = $show_records['status'];
             
-            // Premium Paying Cards
-            
             echo '<div class="column">';
                 echo '<div class="card-pp">';
                     echo '<div class="info">';

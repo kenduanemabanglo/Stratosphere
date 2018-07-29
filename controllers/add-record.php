@@ -1,5 +1,5 @@
 <?php include 'database.php';
-    session_start();
+  session_start();
     if(isset($_POST['add'])) {
         $policy_no = $_POST['policy_no'];
         $first_name = $_POST['first_name'];
@@ -21,23 +21,23 @@
         $middle_initial = $middle_name[0];
         $name = $last_name . ", " . $first_name . " " . $middle_initial . ".";
 
-        $add = mysqli_query($db, "INSERT INTO
-        records(
-          policy_no,
-          last_name,
-          first_name,
-          name,
-          role,
-          product,
-          effective_date,
-          due_date,
-          amount,
-          contact_no,
-          email,
-          mode,
-          status,
-          servicing_agent,
-          servicing_agent_username
+        $add = "INSERT INTO
+        `records`(
+          `policy_no`,
+          `last_name`,
+          `first_name`,
+          `name`,
+          `role`,
+          `product`,
+          `effective_date`,
+          `due_date`,
+          `amount`,
+          `contact_no`,
+          `email`,
+          `mode`,
+          `status`,
+          `servicing_agent`,
+          `servicing_agent_username`
         )
       VALUES
         (
@@ -56,11 +56,12 @@
           '$status',
           '$servicing_agent',
           '$servicing_agent_username'
-        )");  
+        );";
+        $exec_add = mysqli_query($db, $add);
     }
-    if($add) {
-            echo 'Congratulations! You have successfully added a new record.';
-        }else{
-            echo 'Oops! Something went wrong. Please try again.';
-    }
+    if($exec_add){
+      echo 'Congratulations! You have successfully added a new record. Jus keep adding!';
+    }else{
+      echo 'Oops! Something went wrong. Try again.';
+    }    
 ?>

@@ -212,14 +212,14 @@
 			</div>
 			<div class="cf footer">
                 <input type="submit" class="add" name="add" value="Add"/>
+            </form>
                 <input type="reset" class="reset" name="reset" value="Reset"/>
-                <input type="submit" class="close" name="reset" value="Cancel" onclick="location.href='#';"/>
+                <input type="button" class="close" name="cancel" value="Cancel" onclick="location.href='#';"/>
 
 			</div>
 		</div>
 		<div class="overlay"></div>
     </div>
-    </form>
     
     <div id="edit">
 		<div class="edit-content">
