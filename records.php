@@ -119,7 +119,7 @@
             </div>
             <div class="two-column">
                 <label>Middle Name/M.I.</label>
-                    <input type="text" name="middle_name">
+                    <input type="text" name="middle_name_initial">
             </div>
             <div class="two-column">
                 <label>Last Name</label>
@@ -217,10 +217,10 @@
             
 			</div>
 			<div class="cf footer">
-                <input type="submit" class="add" name="add" value="Add" onclick="location.href='records.php";/>
+                <input type="submit" class="add" name="add" value="Add" onclick="location.href='../records.php";/>
             </form>
                 <input type="reset" class="reset" value="Reset"/>
-                <input type="button" class="close" value="Cancel" onclick="location.href='records.php';"/>
+                <input type="button" class="close" value="Cancel" onclick="location.href='../records.php';"/>
 
 			</div>
 		</div>
@@ -273,6 +273,7 @@
                 $policy_no = $display['policy_no'];
                 $temp_last_name = $display['last_name'];
                 $first_name = $display['first_name'];
+                $middle_name_initial = $display['middle_name_initial'];
                 $last_name = strtoupper($temp_last_name);
                 $role = $display['role'];
                 $product = $display['product'];
@@ -296,7 +297,7 @@
                 echo '</div>';
                 echo '<div class="two-column">';
                     echo '<label>Middle Name/M.I.</label>';
-                        echo '<input type="text" name="middle_name">';
+                        echo '<input type="text" name="middle_name" value="'.$middle_name_initial.'">';
                 echo '</div>';
                 echo '<div class="two-column">';
                     echo '<label>Last Name</label>';
@@ -401,7 +402,6 @@
             </form>
                 <input type="reset" class="reset" value="Reset"/>
                 <input type="button" class="close" value="Cancel" onclick="location.href='../records.php';"/>
-
             <?php include 'database.php';;
             if(isset($_POST['save'])) {
                 $client = $_POST['client'];
