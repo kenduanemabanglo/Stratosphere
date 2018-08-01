@@ -9,6 +9,7 @@
 <html>
 <head>
     <meta charset="utf-8" />
+    <link rel="icon" href="img/stratosphere.ico">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Stratosphere | My Records</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -119,7 +120,7 @@
             </div>
             <div class="two-column">
                 <label>Middle Name/M.I.</label>
-                    <input type="text" name="middle_name_initial">
+                    <input type="text" name="middle_name">
             </div>
             <div class="two-column">
                 <label>Last Name</label>
@@ -217,10 +218,10 @@
             
 			</div>
 			<div class="cf footer">
-                <input type="submit" class="add" name="add" value="Add" onclick="location.href='../records.php";/>
+                <input type="submit" class="add" name="add" value="Add" onclick="location.href='../../../records.php";/>
             </form>
                 <input type="reset" class="reset" value="Reset"/>
-                <input type="button" class="close" value="Cancel" onclick="location.href='../records.php';"/>
+                <input type="button" class="close" value="Cancel" onclick="location.href='../../../records.php';"/>
 
 			</div>
 		</div>
@@ -273,7 +274,6 @@
                 $policy_no = $display['policy_no'];
                 $temp_last_name = $display['last_name'];
                 $first_name = $display['first_name'];
-                $middle_name_initial = $display['middle_name_initial'];
                 $last_name = strtoupper($temp_last_name);
                 $role = $display['role'];
                 $product = $display['product'];
@@ -297,7 +297,7 @@
                 echo '</div>';
                 echo '<div class="two-column">';
                     echo '<label>Middle Name/M.I.</label>';
-                        echo '<input type="text" name="middle_name" value="'.$middle_name_initial.'">';
+                        echo '<input type="text" name="middle_name">';
                 echo '</div>';
                 echo '<div class="two-column">';
                     echo '<label>Last Name</label>';
@@ -396,12 +396,13 @@
         }
 
     ?>
-			</div>
+			    </div>
 			<div class="cf footer">
-                <input type="submit" class="save" name="save" value="Save" onclick="location.href='../records.php";/>
-            </form>
+                <input type="submit" class="save" name="save" value="Save" onclick="location.href='../../records.php";/>
+            <?php echo '</form>'; ?>
                 <input type="reset" class="reset" value="Reset"/>
-                <input type="button" class="close" value="Cancel" onclick="location.href='../records.php';"/>
+                <input type="button" class="close" value="Cancel" onclick="location.href='../../records.php';"/>
+
             <?php include 'database.php';;
             if(isset($_POST['save'])) {
                 $client = $_POST['client'];
@@ -426,7 +427,7 @@
                 $get_middle_initial = mysqli_query($db, "SELECT name FROM records WHERE name LIKE '%.' AND name = '$client';");
                 $name = $last_name . ", " . $first_name . " " . $middle_initial . ".";
 
-                $add = mysqli_query($db, "UPDATE
+                $edit = mysqli_query($db, "UPDATE
                 `records` SET
                 `policy_no` = '$policy_no',
                 `last_name` = '$last_name',
@@ -441,22 +442,21 @@
                 `email` = '$email',
                 `mode` = '$mode',
                 `status` = '$status',
-                `servicing_agent` = '$servicing_agent';
-                WHERE name = $client"); 
-                
-  //       if($add) {
-  //         echo '<script type="text/javascript">';
-  //           echo 'alert("Congratulations! You have successfully added a new record. Just keep adding!")';
-  //           header('location: ../records.php');
-  //         echo '</script>';
-  //     }else{
-  //       echo '<script type="text/javascript">';
-  //           echo 'alert("Oops! Something went wrong. Please try again.")';
-  //         echo '</script>';
-          
-  // }
-    }
+                `servicing_agent` = '$servicing_agent'
+                WHERE name = '$client';"); 
+                      
     
+        if($edit) {
+            echo '<script type="text/javascript">';
+            header('location: records.php');
+            echo 'alert("Congratulations! You have successfully added a new record. Just keep adding!")';
+            echo '</script>';
+        }else{
+        echo '<script type="text/javascript">';
+            echo 'alert("Oops! Something went wrong. Please try again.")';
+            echo '</script>';
+            }
+        }
 ?>
 
 			</div>

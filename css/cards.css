@@ -361,7 +361,7 @@ input[value="Lookup"] {
   	color: #fff !important;
 }
 
-.lookup:hover {
+input[value="Lookup"]:hover {
 	background-color: #48E68B !important;
 }
 
