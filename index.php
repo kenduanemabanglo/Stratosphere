@@ -17,7 +17,7 @@
     </div>
     <?php include 'login.php'; ?> 
     <form method="POST">
-      <input type="text" id="login" class="fadeIn second" name="username" placeholder="username">
+      <input type="text" id="login" class="fadeIn second" name="username" autofocus placeholder="username">
       <input type="text" id="password" class="fadeIn third" name="password" placeholder="password">
       <input type="submit" class="fadeIn fourth" name="login" value="Log In">
     </form>

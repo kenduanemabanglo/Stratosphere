@@ -25,7 +25,8 @@
           if($get_query->num_rows > 0) {
           while($row = mysqli_fetch_assoc($get_query)) {
             $password = $row['password'];
-            echo '<input type="text" id="password" class="fadeIn third" value='.$password;'>';
+            echo '<input type="text" id="login" class="fadeIn second" value='.$username.'>';
+            echo '<input type="text" id="password" class="fadeIn third" value='.$password.'>';
           }
         }else{
           echo '<div class="alert">';

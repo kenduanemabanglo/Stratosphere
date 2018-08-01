@@ -139,7 +139,7 @@ p {
 	padding:15px;
 }
 .edit-content {
-	background: #f7f7f7;
+	background: #6ca6cd;
 	position: relative;
 	z-index: 20;
 	border-radius:5px;
@@ -157,6 +157,12 @@ p {
 	top: 0;
 	width: 100%;
 	z-index: 10;
+}
+#edit input {
+	border: 2px solid #6ca6cd;
+}
+#edit select {
+	border: 2px solid #6ca6cd;
 }
 
 #delete {
@@ -301,7 +307,7 @@ input[value="Cancel"] {
     background-color: #e74c3c !important;
   box-shadow: 0px 5px 0px 0px #CE3323 !important;
     text-decoration: none !important;
-    border: 0px solid #fff;
+    border: 0px solid #fff !important;
     border-radius: 8px !important;
     font-weight: 300 !important;
     margin-top: 12px !important;
@@ -317,7 +323,7 @@ input[name="add"] {
     background: #55acee !important;
 	text-decoration: none !important;
 	box-shadow: 0px 5px 0px 0px #3C93D5 !important;
-    border: 0px solid #fff;
+    border: 0px solid #fff !important;
     border-radius: 8px !important;
     font-weight: 300 !important;
     margin-top: 4px !important;
@@ -332,8 +338,8 @@ input[name="add"] {
 input[value="Reset"] {
     padding: 11px 10px !important;
     background-color: #e67e22 !important;
-  box-shadow: 0px 5px 0px 0px #CD6509 !important;
-  border: 0px solid #fff;
+  	box-shadow: 0px 5px 0px 0px #CD6509 !important;
+  	border: 0px solid #fff !important;
     border-radius: 8px !important;
     font-weight: 300 !important;
     margin-top: 10px !important;
@@ -343,6 +349,51 @@ input[value="Reset"] {
 .reset:hover {
 	background-color: #FF983C !important;
   }
+
+input[value="Lookup"] {
+	background-color: #2ecc71 !important;
+  	box-shadow: 0px 5px 0px 0px #15B358 !important;
+  	border: 0px solid #fff !important;
+  	border-radius: 8px !important;
+  	font-weight: 300 !important;
+  	margin-top: 10px !important;
+  	margin-right: 4px !important;
+  	color: #fff !important;
+}
+
+.lookup:hover {
+	background-color: #48E68B !important;
+}
+
+input[value="Save"] {
+	background-color: #2ecc71 !important;
+  	box-shadow: 0px 5px 0px 0px #15B358 !important;
+ 	border: 0px solid #fff !important;
+  	border-radius: 8px !important;
+  	font-weight: 300 !important;
+  	margin-top: 10px !important;
+  	margin-right: 4px !important;
+  	color: #fff !important;
+}
+
+.save:hover {
+	background-color: #48E68B !important;
+}
+
+input[name="client"] {
+	margin-top: 10px !important;
+	color: #fff !important;
+	font-family: 'Poppins' !important;
+	font-size: 15px !important;
+	margin-bottom: 0px !important;
+	text-transform: uppercase !important;
+	font-weight: 300 !important;
+	background: #1e88e5 !important;
+	border: 0px solid #fff !important;
+	border-radius: 8px !important;
+	max-width: 400px !important;
+	text-align: center;
+}
 
 @media screen and (max-width: 600px) {
     .column {
