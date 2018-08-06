@@ -236,8 +236,91 @@ p {
     font-family: 'Poppins';
 }
 
+#more {
+	left:50%;
+	margin:-250px 0 0 -40%;
+	opacity: 0;
+	position:absolute;
+	top:0%;
+	visibility: hidden;
+	width:80%;
+	box-shadow:0 3px 7px rgba(0,0,0,.25);
+	box-sizing:border-box;
+	transition: all 0.4s ease-in-out;
+	-moz-transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.4s ease-in-out;
+}
+	/* Make the add appear when targeted */
+	#more:target {
+		opacity: 1;
+		top:50%;
+		visibility: visible;
+	}
+#more .header,#more  {
+	border-bottom: 1px solid #e7e7e7;
+	border-radius: 5px 5px 0 0;
+}
+	#more .cf-footer {
+		border:none;
+		border-top: 1px solid #e7e7e7;
+        border-radius: 0 0 5px 5px;
+        height: 50px;
+	}
+#more h2 {
+	margin:0;
+}
+#more .btn {
+	float:right;
+}
+#more .copy,#more .header, #more .footer {
+	padding:15px;
+}
+.add-content {
+	background: #77dd77;
+	position: relative;
+	z-index: 20;
+    border-radius:5px;
+    color: #fff;
+}
+#more .copy {
+	background: #fff;
+}
+
+#more .overlay {
+	background-color: #000;
+	background: rgba(0,0,0,0.8);
+	height: 100%;
+	left: 0;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 10;
+}
+
 .show-more {
-    padding: 7px 5px;
+    padding: 10px 8px;
+    background: #1e88e5;
+    text-decoration: none;
+    color: white;
+	font-weight: 300;
+	font-size: 15px;
+	font-family: 'Poppins';
+	min-width: 100%;
+	border-bottom-right-radius: 5px !important;
+	border-bottom-left-radius: 5px !important;
+	border-top-right-radius: 0px !important;
+	border-top-left-radius: 0px !important;
+}
+
+input[name="policy_no"] {
+	border: none;
+	font-family: 'Poppins';
+	font-size: 16px;
+}
+
+input[value="show more"] {
+	border: none;
+	padding: 7px 5px;
     background: #1e88e5;
     text-decoration: none;
     color: white;

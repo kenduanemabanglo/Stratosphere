@@ -64,6 +64,7 @@
     <br>
     <div class="row">
     <?php include 'controllers/show-records.php'; ?>
+    
     </div>
     
     <div class="fab">
@@ -209,7 +210,7 @@
                 if($servicing_name->num_rows != 0) {
                     while($show_agent_name = mysqli_fetch_assoc($servicing_name)) {
                         $servicing_agent_name = $show_agent_name['servicing_name'];
-                        echo '<input type="text" value="'.$servicing_agent_name.'" name="servicing_agent">';
+                        echo '<input type="text" value="'.$servicing_agent_name.'" name="servicing_agent" readonly />';
                     }
                 }
             ?>  
