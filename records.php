@@ -468,29 +468,28 @@
     </div>
     
     <div id="delete">
-    <form method="POST" class="submission-form">
-		<div class="delete-content">
-			<div class="header">
-            <h2>Delete a Record</h2>
-                <?php 
-                $servicing_agent = implode('', $_SESSION);
-                $name = mysqli_query($db, "SELECT first_name FROM login WHERE username = '$servicing_agent';");
-                if($name->num_rows != 0) {
-                    while($show_name = mysqli_fetch_assoc($name)) {
-                        $first_name = $show_name['first_name'];
-                        echo '<h3>Hi, '.$first_name.'. Deleting a record? Make sure to fill up all the necssary and/or required fields below.</h3>';
+        <form method="POST" class="submission-form">
+            <div class="delete-content">
+                <div class="header">
+                <h2>Delete a Record</h2>
+                    <?php $servicing_agent = implode('', $_SESSION);
+                    $name = mysqli_query($db, "SELECT first_name FROM login WHERE username = '$servicing_agent';");
+                    if($name->num_rows != 0) {
+                        while($show_name = mysqli_fetch_assoc($name)) {
+                            $first_name = $show_name['first_name'];
+                            echo '<h3>Hi, '.$first_name.'. Deleting a record? Make sure to fill up all the necssary and/or required fields below.</h3>';
+                        }
                     }
-                }
-            ?>
-			</div>
-			<div class="copy two-row">
-				<div class="one-column">
+                    ?>
+                </div>
+            <div class="copy two-row">
+                <div class="one-column">
                 <label>Record</label>
-                   <select name="record-name">
+                <select name="delete_name">
                        <option default>Please choose record to delete</option>
                        <?php include 'database.php';
                             $agent = implode('', $_SESSION);
-                            $delete_record = mysqli_query($db, "SELECT * FROM records WHERE servicing_agent_username = '$agent'  ORDER BY last_name;;");
+                            $delete_record = mysqli_query($db, "SELECT * FROM records WHERE servicing_agent_username = '$agent'  ORDER BY last_name;");
                             if ($delete_record->num_rows > 0) {
                             while($show_record = mysqli_fetch_assoc($delete_record)) {
                             echo '<option value="'.$show_record['name'].'">'.$show_record['name'].'</option>';
@@ -499,21 +498,26 @@
                         ?>
                    </select>
                 </div>
-			  </div>
-			<div class="cf footer">
-                <input type="submit" class="delete" name="delete" value="Delete" onclick="location.href='../../records.php";/>
-            </form>
-            <?php include 'database.php';
-            if(isset($_POST['delete'])) {
-                $name = $_POST['name'];
-
-                $delete = mysqli_query($db, "DELETE FROM records WHERE name = '$name';"); 
-            ?>
-                <input type="button" class="close" value="Cancel" onclick="location.href='../../records.php';"/>
             </div>
-		</div>
-		<div class="overlay"></div>
+            <?php include 'database.php';
+                if(isset($_POST['delete'])) {
+                    $delete_name = $_POST['delete_name'];
+
+                    $delete = mysqli_query($db, "DELETE FROM records WHERE name = '$delete_name';");
+                }
+            ?>
+            <div class="cf footer">
+                <input type="submit" class="delete" name="delete" value="Delete" onclick="location.href= '../../records.php';" />
+                <input type="button" class="close" value="Cancel" onclick="location.href= '../../records.php';" />
+            </form>
+            </div>
+            </div>
+
+        <div class="overlay"></div>
+       
     </div>
+
+        
 <script>
 $('.fab').click(function() {
 $(this).toggleClass('open');
