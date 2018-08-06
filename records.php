@@ -1,7 +1,7 @@
 <?php include 'database.php';
     session_start();
     if (!isset($_SESSION['start_session']) || (trim ($_SESSION['start_session']) == '')) {
-        header('location:index.php');
+        header('location: index.php');
         exit();
     }
 ?>
@@ -207,7 +207,7 @@
                 $servicing_agent = implode('', $_SESSION);
                 $servicing_name = mysqli_query($db, "SELECT servicing_name FROM login WHERE username = '$servicing_agent' LIMIT 1;");
                 if($servicing_name->num_rows != 0) {
-                    while($show_agent_name = mysqli_fetch_assoc($servicing_name)){
+                    while($show_agent_name = mysqli_fetch_assoc($servicing_name)) {
                         $servicing_agent_name = $show_agent_name['servicing_name'];
                         echo '<input type="text" value="'.$servicing_agent_name.'" name="servicing_agent">';
                     }
@@ -218,7 +218,7 @@
             
 			</div>
 			<div class="cf footer">
-                <input type="submit" class="add" name="add" value="Add" onclick="location.href='../../../records.php";/>
+                <input type="submit" class="add" name="add" value="Add";/>
             </form>
                 <input type="reset" class="reset" value="Reset"/>
                 <input type="button" class="close" value="Cancel" onclick="location.href='../../../records.php';"/>
@@ -237,7 +237,7 @@
                 $servicing_agent = implode('', $_SESSION);
                 $name = mysqli_query($db, "SELECT first_name FROM login WHERE username = '$servicing_agent';");
                 if($name->num_rows != 0) {
-                    while($show_name = mysqli_fetch_assoc($name)){
+                    while($show_name = mysqli_fetch_assoc($name)) {
                         $first_name = $show_name['first_name'];
                         echo '<h3>Hi, '.$first_name.'. Editing a record? Make sure to fill up all the necssary and/or required fields below.</h3>';
                     }
@@ -275,6 +275,7 @@
                 $temp_last_name = $display['last_name'];
                 $first_name = $display['first_name'];
                 $last_name = strtoupper($temp_last_name);
+                $middle_name = $display['middle_name'];
                 $role = $display['role'];
                 $product = $display['product'];
                 $effective_date = $display['effective_date'];
@@ -284,6 +285,8 @@
                 $email = $display['email'];
                 $mode = $display['mode'];
                 $status = $display['status'];
+                $middle_initial = $middle_name[0];
+
                 echo '<br>';
                 echo '<form method="POST" action="">';
                 echo '<center><input type="text" name="client" value="'.$client_name.'"></center>';
@@ -297,7 +300,7 @@
                 echo '</div>';
                 echo '<div class="two-column">';
                     echo '<label>Middle Name/M.I.</label>';
-                        echo '<input type="text" name="middle_name">';
+                        echo '<input type="text" name="middle_name" value="'.$middle_initial.'">';
                 echo '</div>';
                 echo '<div class="two-column">';
                     echo '<label>Last Name</label>';
@@ -403,7 +406,7 @@
                 <input type="reset" class="reset" value="Reset"/>
                 <input type="button" class="close" value="Cancel" onclick="location.href='../../records.php';"/>
 
-            <?php include 'database.php';;
+            <?php include 'database.php';
             if(isset($_POST['save'])) {
                 $client = $_POST['client'];
                 $policy_no = $_POST['policy_no'];
@@ -457,7 +460,7 @@
             echo '</script>';
             }
         }
-?>
+        ?>
 
 			</div>
 		</div>
@@ -465,18 +468,52 @@
     </div>
     
     <div id="delete">
+    <form method="POST" class="submission-form">
 		<div class="delete-content">
 			<div class="header">
-				<h2>Modal Heading</h2>
+            <h2>Delete a Record</h2>
+                <?php 
+                $servicing_agent = implode('', $_SESSION);
+                $name = mysqli_query($db, "SELECT first_name FROM login WHERE username = '$servicing_agent';");
+                if($name->num_rows != 0) {
+                    while($show_name = mysqli_fetch_assoc($name)) {
+                        $first_name = $show_name['first_name'];
+                        echo '<h3>Hi, '.$first_name.'. Deleting a record? Make sure to fill up all the necssary and/or required fields below.</h3>';
+                    }
+                }
+            ?>
 			</div>
-			<div class="copy">
-			</div>
+			<div class="copy two-row">
+				<div class="one-column">
+                <label>Record</label>
+                   <select name="record-name">
+                       <option default>Please choose record to delete</option>
+                       <?php include 'database.php';
+                            $agent = implode('', $_SESSION);
+                            $delete_record = mysqli_query($db, "SELECT * FROM records WHERE servicing_agent_username = '$agent'  ORDER BY last_name;;");
+                            if ($delete_record->num_rows > 0) {
+                            while($show_record = mysqli_fetch_assoc($delete_record)) {
+                            echo '<option value="'.$show_record['name'].'">'.$show_record['name'].'</option>';
+                            }
+                        }
+                        ?>
+                   </select>
+                </div>
+			  </div>
 			<div class="cf footer">
-				<a href="#" class="btn close">Close</a>
-			</div>
+                <input type="submit" class="delete" name="delete" value="Delete" onclick="location.href='../../records.php";/>
+            </form>
+            <?php include 'database.php';
+            if(isset($_POST['delete'])) {
+                $name = $_POST['name'];
+
+                $delete = mysqli_query($db, "DELETE FROM records WHERE name = '$name';"); 
+            ?>
+                <input type="button" class="close" value="Cancel" onclick="location.href='../../records.php';"/>
+            </div>
 		</div>
 		<div class="overlay"></div>
-	</div>
+    </div>
 <script>
 $('.fab').click(function() {
 $(this).toggleClass('open');

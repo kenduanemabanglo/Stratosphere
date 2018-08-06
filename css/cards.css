@@ -165,6 +165,7 @@ p {
 	border: 2px solid #6ca6cd;
 }
 
+
 #delete {
 	left:50%;
 	margin:-250px 0 0 -40%;
@@ -205,7 +206,7 @@ p {
 	padding:15px;
 }
 .delete-content {
-	background: #f7f7f7;
+	background: #f7675c;
 	position: relative;
 	z-index: 20;
 	border-radius:5px;
@@ -223,6 +224,16 @@ p {
 	top: 0;
 	width: 100%;
 	z-index: 10;
+}
+
+#delete select {
+	display: block;
+    width: 100%;
+    border: 2px solid #f7675c !important;
+    padding: .5rem;
+    font-size: 18px !important;
+    border-radius: 5px;
+    font-family: 'Poppins';
 }
 
 .show-more {
@@ -333,6 +344,23 @@ input[name="add"] {
 }
 .add:hover {
 		background-color: #6FC6FF !important;
+	  }
+
+input[name="delete"] {
+    padding: 11px 10px !important;
+    background: #2ecc71 !important;
+	text-decoration: none !important;
+	box-shadow: 0px 5px 0px 0px #15b358 !important;
+    border: 0px solid #fff !important;
+    border-radius: 8px !important;
+    font-weight: 300 !important;
+    margin-top: 4px !important;
+	margin-right: 4px !important;
+	color: #fff !important;
+		/* background-color: #55acee; */
+}
+.delete:hover {
+		background-color: #48E68B !important;
 	  }
 
 input[value="Reset"] {

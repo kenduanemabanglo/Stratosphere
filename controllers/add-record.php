@@ -25,6 +25,7 @@
           `policy_no`,
           `last_name`,
           `first_name`,
+          `middle_name`,
           `name`,
           `role`,
           `product`,
@@ -43,6 +44,7 @@
           '$policy_no',
           '$last_name',
           '$first_name',
+          '$middle_name',
           '$name',
           '$role',
           '$product',
@@ -56,18 +58,7 @@
           '$servicing_agent',
           '$servicing_agent_username'
         )"); 
-        
-  //       if($add) {
-  //         echo '<script type="text/javascript">';
-  //           echo 'alert("Congratulations! You have successfully added a new record. Just keep adding!")';
-  //           header('location: ../records.php');
-  //         echo '</script>';
-  //     }else{
-  //       echo '<script type="text/javascript">';
-  //           echo 'alert("Oops! Something went wrong. Please try again.")';
-  //         echo '</script>';
-          
-  // }
     }
+    
     
 ?>
