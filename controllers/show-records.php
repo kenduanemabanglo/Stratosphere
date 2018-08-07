@@ -23,7 +23,7 @@
                     echo '<p>Effective Date : '.$effective_date;'</p>'; 
                     echo '<p>Status : '.$status;'</p>'; 
                     echo '</div>';
-                    echo '<center><input type="submit" class="show-more" value="show more" readonly/></center>';
+                    echo '<center><input type="submit" name="more" class="show-more" value="show more" readonly/></center>';
                 echo '</div>';
                 echo '</form>';
             echo '</div>';
