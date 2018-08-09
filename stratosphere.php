@@ -64,7 +64,7 @@
     function displayClock() {
     var time = new Date();
     var type = "AM";
-    var message = "Good morning, " + name;
+    var message = "Good morning, " + name + "!";
     var hours = time.getHours();
     var minutes = time.getMinutes();
     var seconds = time.getSeconds();
@@ -79,7 +79,7 @@
         type = "PM";
         message = "Good afternoon!";
             if(hours > 6) {
-                message = "Good evening, " + name;
+                message = "Good evening, " + name + "!";
             }
     }
     
