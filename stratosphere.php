@@ -54,11 +54,55 @@
                 while($name = mysqli_fetch_assoc($query)) {
                     $first_name = $name['first_name'];
 
-                    echo '<p id="message">'.$first_name;'</p>';
+                    
                 }
             }
-    ?>
+        ?>
+        <p id="message"></p>
         
-  <script src="js/clock.js"></script>
+<script>
+    function displayClock() {
+    var time = new Date();
+    var type = "AM";
+    var message = "Good morning, " + name;
+    var hours = time.getHours();
+    var minutes = time.getMinutes();
+    var seconds = time.getSeconds();
+    var name = "<?php echo $first_name; ?>";
+    
+
+    if (hours == 0) {
+        hours = 12;
+    }
+    if (hours > 12) {
+        hours = hours - 12;
+        type = "PM";
+        message = "Good afternoon!";
+            if(hours > 6) {
+                message = "Good evening, " + name;
+            }
+    }
+    
+    if (hours < 10) {
+        hours = "0" + hours;
+    }
+
+    if (minutes < 10) {
+        minutes = "0" + minutes
+    }
+
+    if (seconds < 10) {
+        seconds = "0" + seconds;
+    }
+    var myClock = document.getElementById('clock');
+    var myMessage = document.getElementById('message');
+    myClock.textContent = hours + ":" + minutes + ":" + seconds + "       " + type;
+    myMessage.textContent = message ;
+    
+    setTimeout('displayClock()', 1000);
+}
+displayClock();
+
+</script>
 </body>
 </html>
