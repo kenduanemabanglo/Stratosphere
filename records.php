@@ -18,6 +18,7 @@
     <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
     <link href="css/datedropper.css" rel="stylesheet" type="text/css" />
     <link href="css/manulife.css" rel="stylesheet" type="text/css" />
+    <script src="js/script.js"></script>
     <script src="js/jquery-1.10.2.min.js"></script>
     <script src="js/datedropper.js"></script>
     
@@ -78,7 +79,7 @@
             $status = $show_records['status'];
             
             echo '<div class="column">';
-            echo '<form method="POST">';
+            echo '<form method="GET" id="show">';
                 echo '<div class="card-pp">';
                     echo '<div class="info">';
                     echo '<h4><b>'.$name;'</b></h4>';
@@ -88,31 +89,31 @@
                     echo '<p>Effective Date : '.$effective_date;'</p>'; 
                     echo '<p>Status : '.$status;'</p>'; 
                     echo '</div>';
-                    echo '<center><input type="submit" name="more" class="show-more" value="show more" readonly/></center>';
-                echo '</div>';
-                echo '</form>';
+                    
+                    echo '<center><a href="controllers/show-more-records.php?policy_no='.$policy_no.'"class="show-more" name="show-more">show more</a></center>';
+                    echo '</form>';
+                echo '</div>'; 
             echo '</div>';
+
+            
         } 
     }
-?>
-<?php include 'database.php';
-    // Show all the records with reference to the logged in agent
-    $agent = implode('', $_SESSION);
-    if(isset($_POST['more'])) {
+    ?>
+    <?php include 'database.php';
+    if(isset($_POST['show-more'])) {
         $policy_no = $_POST['policy_no'];
-
-        $query = mysqli_query($db, "SELECT * FROM records WHERE policy_no = '$policy_no';");
-
+    echo '<div id="showModal" class="display">';
+            echo '<div class="content">';
+            echo '<span class="exit">&times;</span>';
+            echo '<p>Some text in the Modal..</p>';
+            echo '</div>';
+        echo '</div>';
     }
     ?>
     </div>
-    
     <div class="fab">
         <div class="trigger"><span>&#9776;</span></div>
-        
-
             <div class="actions">
-            
                 <div class="action green"><a href="#add"><i class="fa fa-user-plus"></i></a>
                 <div class="tooltip">Add a Record</div>
             </div>
@@ -555,10 +556,10 @@
             </div>
 
         <div class="overlay"></div>
-       
     </div>
-
-        
+    <script>
+            
+</script>    
 <script>
 $('.fab').click(function() {
 $(this).toggleClass('open');
